@@ -31,7 +31,7 @@ export default function ContactPage() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568"],
+      details: ["0240528361", "0242737456"],
       description: "Mon-Fri 9AM-6PM EST",
     },
     {
@@ -122,8 +122,8 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/20 h-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900 text-white">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
             <h1 className="text-2xl font-bold text-white">
@@ -149,11 +149,11 @@ export default function ContactPage() {
         </div>
       </section>
       {/* Contact Info Cards */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#1E1E1E' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-green-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-gray-900 border-gray-700 text-white">
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-black/20 backdrop-blur-sm border-5 border-white/20 hover:bg-black/30 transition-all duration-300 text-white">
                 <CardHeader>
                   <div className="flex justify-center mb-4 text-green-400">{info.icon}</div>
                   <CardTitle className="text-lg text-white">{info.title}</CardTitle>
@@ -173,28 +173,28 @@ export default function ContactPage() {
       </section>
       {/* Contact Form */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto bg-gray-900 rounded-lg shadow-lg p-8 border border-gray-700 text-white">
+        <div className="max-w-2xl mx-auto bg-black/20 backdrop-blur-sm rounded-lg shadow-lg p-8 border-5 border-white/20 text-white">
           <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right text-white">Name</Label>
-              <Input id="name" name="name" value={formData.name} onChange={handleInputChange} className="col-span-3 bg-gray-800 border-gray-700 text-white" required />
+              <Input id="name" name="name" value={formData.name} onChange={handleInputChange} className="col-span-3 bg-black/10 border-5 border-white/20 text-white" required />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="email" className="text-right text-white">Email</Label>
-              <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="col-span-3 bg-gray-800 border-gray-700 text-white" required />
+              <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="col-span-3 bg-black/10 border-5 border-white/20 text-white" required />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="phone" className="text-right text-white">Phone</Label>
-              <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} className="col-span-3 bg-gray-800 border-gray-700 text-white" />
+              <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} className="col-span-3 bg-black/10 border-5 border-white/20 text-white" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="subject" className="text-right text-white">Subject</Label>
-              <Input id="subject" name="subject" value={formData.subject} onChange={handleInputChange} className="col-span-3 bg-gray-800 border-gray-700 text-white" />
+              <Input id="subject" name="subject" value={formData.subject} onChange={handleInputChange} className="col-span-3 bg-black/10 border-5 border-white/20 text-white" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="inquiryType" className="text-right text-white">Inquiry Type</Label>
-              <select id="inquiryType" name="inquiryType" value={formData.inquiryType} onChange={handleInputChange} className="col-span-3 bg-gray-800 border-gray-700 text-white rounded-md">
+              <select id="inquiryType" name="inquiryType" value={formData.inquiryType} onChange={handleInputChange} className="col-span-3 bg-white border-white/20 text-black rounded-md">
                 <option value="general">General</option>
                 <option value="support">Support</option>
                 <option value="partnership">Partnership</option>
@@ -203,7 +203,7 @@ export default function ContactPage() {
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="message" className="text-right text-white">Message</Label>
-              <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} className="col-span-3 bg-gray-800 border-gray-700 text-white" required />
+              <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} className="col-span-3 bg-black/10 border-5 border-white/20 text-white" required />
             </div>
             <Button type="submit" className="w-full bg-green-600 hover:bg-green-700" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Send Message"}
